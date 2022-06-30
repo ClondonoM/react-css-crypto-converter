@@ -1,3 +1,4 @@
+import useSelectCurrency from '../hooks/useSelectCurrency';
 import styled from '@emotion/styled';
 
 const InputSubmit = styled.input`
@@ -19,6 +20,8 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
+  const [SelectCurrency] = useSelectCurrency();
+  SelectCurrency();
   return (
     <form>
       <InputSubmit type='submit' value='Convert' />
