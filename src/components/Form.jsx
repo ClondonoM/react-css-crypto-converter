@@ -1,4 +1,5 @@
-import useSelectCurrency from '../hooks/useSelectCurrency';
+import useSelectCoin from '../hooks/useSelectCoin';
+import { currencies } from '../data/currencies.js';
 import styled from '@emotion/styled';
 
 const InputSubmit = styled.input`
@@ -20,10 +21,13 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
-  const [SelectCurrency] = useSelectCurrency();
-  SelectCurrency();
+  const [SelectCoin] = useSelectCoin('Select your currency', currencies);
+  // const [SelectCrypto] = useSelectCoin('Select your crypto');
+
   return (
     <form>
+      <SelectCoin />
+      {/* <SelectCrypto /> */}
       <InputSubmit type='submit' value='Convert' />
     </form>
   );
