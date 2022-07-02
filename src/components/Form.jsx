@@ -25,6 +25,10 @@ const InputSubmit = styled.input`
 const Form = () => {
   const [cryptos, setCryptos] = useState([]);
   const [coin, SelectCoin] = useSelectCoin('Select your currency', currencies);
+  const [cryptoCoin, SelectCryptoCoin] = useSelectCoin(
+    'Select your crypto',
+    cryptos
+  );
   useEffect(() => {
     const consultAPI = async () => {
       const url =
@@ -46,8 +50,8 @@ const Form = () => {
   return (
     <form>
       <SelectCoin />
+      <SelectCryptoCoin />
 
-      {/* <SelectCrypto /> */}
       <InputSubmit type='submit' value='Convert' />
     </form>
   );
