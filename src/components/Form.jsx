@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useSelectCoin from '../hooks/useSelectCoin';
 import { currencies } from '../data/currencies.js';
 import styled from '@emotion/styled';
@@ -23,6 +23,7 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
+  const [cryptos, setCryptos] = useState([]);
   const [coin, SelectCoin] = useSelectCoin('Select your currency', currencies);
   useEffect(() => {
     const consultAPI = async () => {
@@ -30,7 +31,14 @@ const Form = () => {
         'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD';
       const response = await fetch(url);
       const result = await response.json();
-      console.log(result.Data);
+      const arrayCryptos = result.Data.map((crypto) => {
+        const object = {
+          id: crypto.CoinInfo.Name,
+          name: crypto.CoinInfo.FullName,
+        };
+        return object;
+      });
+      setCryptos(arrayCryptos);
     };
     consultAPI();
   }, []);
