@@ -29,7 +29,7 @@ const Heading = styled.h1`
   text-align: center;
   font-weight: 700;
   margin-top: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 34px;
 
   &::after {
@@ -40,6 +40,14 @@ const Heading = styled.h1`
     display: block;
     margin: 10px auto 0 auto;
   }
+`;
+
+const Link = styled.a`
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
 `;
 
 function App() {
@@ -67,6 +75,13 @@ function App() {
       <Image src={CryptoImage} alt='Cryptos image' />
       <div>
         <Heading>Crypto Converter</Heading>
+        <Link
+          href='https://carlos-londono.dev/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          by <span>carlos-londono.dev</span>{' '}
+        </Link>
         <Form setCoins={setCoins} />
         {loading && <Spinner />}
         {result.PRICE && <Result result={result} />}
