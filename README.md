@@ -2,7 +2,8 @@
 
 ## react-css-crypto-converter
 
-Crypto Converter App allows you to convert the value of any cryptocurrency from the market cap top 20 to the price of a currency such as the Dollar, Euro, British Pound or Colombian peso. This application uses data from cryptocompare.com API
+Crypto Converter App allows you to convert the value of any cryptocurrency from the market cap top 20 to the price of a currency such as the Dollar, Euro, British Pound or Colombian peso. This application uses data from cryptocompare.com API.
+It was created with react and styled components
 
 ## Getting Started with Vite React App
 
