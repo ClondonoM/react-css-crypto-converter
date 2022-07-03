@@ -5,7 +5,7 @@ import { currencies } from '../data/currencies.js';
 import Error from './Error';
 
 const InputSubmit = styled.input`
-  background-color: #9497ff;
+  background-color: #ffa17a;
   border: none;
   width: 100%;
   padding: 10px;
@@ -18,7 +18,7 @@ const InputSubmit = styled.input`
   margin-top: 20px;
 
   &:hover {
-    background-color: #7a7dfe;
+    background-color: #f98383;
     cursor: pointer;
   }
 `;
